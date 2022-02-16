@@ -86,17 +86,17 @@
 
 (defn do-prepare-login [req]
   (let [email (get-in req [:params "email"])]
-    (if-let [resp (webauthn/prepare-login email (fn [email] (:authenticator (get-user email))))]
+    (if-let [resp (webauthn/prepare-login email (fn [email] [(:authenticator (get-user email))]))]
       (response (json/write-str resp))
       (ring.util.response/status
-        (json/write-str {:message (str "Cannot prepare login for user: " email)}) 500))))
+       (json/write-str {:message (str "Cannot prepare login for user: " email)}) 500))))
 
 (defn do-login [{session :session :as req}]
   (let [payload (-> req :body input (json/read-str :key-fn keyword))]
     (let [email (cljwebauthn.b64/decode (:user-handle payload))
           user (get-user email)
           auth (:authenticator user)]
-      (if-let [log (webauthn/login-user payload site-properties (fn [email] auth))]
+      (if-let [log (webauthn/login-user payload site-properties (fn [email] [auth]))]
         (assoc (redirect "/") :session (assoc session :identity (select-keys user [:id :email])))
         (redirect "/login")))))
 
