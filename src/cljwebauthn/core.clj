@@ -171,4 +171,5 @@
                          (when (.validate manager data parameters)
                            {:user-id user-handle :challenge challenge})
                          (catch BadSignatureException bse
+                           ;; invalid assertion signature
                            nil))))))))

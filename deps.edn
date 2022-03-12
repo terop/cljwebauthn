@@ -1,16 +1,16 @@
 {:paths   ["resources" "src"]
  :deps    {org.clojure/clojure            {:mvn/version "1.10.3"}
            org.clojure/data.json          {:mvn/version "2.4.0"}
-           com.webauthn4j/webauthn4j-core {:mvn/version "0.19.0.RELEASE"}
+           com.webauthn4j/webauthn4j-core {:mvn/version "0.19.1.RELEASE"}
            nrepl/nrepl                    {:mvn/version "0.9.0"}}
  :aliases {:test      {:extra-paths ["test" "test-resources"]
-                       :extra-deps  {lambdaisland/kaocha {:mvn/version "1.62.993"}
+                       :extra-deps  {lambdaisland/kaocha {:mvn/version "1.63.998"}
                                      buddy/buddy         {:mvn/version "2.0.0"}
                                      ring/ring           {:mvn/version "1.9.5"}
                                      compojure/compojure {:mvn/version "1.6.2"}}
                        :main-opts   ["-m" "kaocha.runner"]}
            :run-test  {:extra-paths ["test" "test-resources"]
-                       :extra-deps  {lambdaisland/kaocha {:mvn/version "1.62.993"}
+                       :extra-deps  {lambdaisland/kaocha {:mvn/version "1.63.998"}
                                      buddy/buddy         {:mvn/version "2.0.0"}
                                      ring/ring           {:mvn/version "1.9.5"}
                                      compojure/compojure {:mvn/version "1.6.2"}}
@@ -19,11 +19,11 @@
                        :main-opts  ["-m" "clj-kondo.main" "--lint" "src"]}
            :fmt-fix   {:extra-deps {com.jameslaverack/cljfmt-runner
                                     {:git/url "https://github.com/JamesLaverack/cljfmt-runner"
-                                     :sha     "6383fbb0bd22a21c0edf5b699425504d9f0a958a"}}
+                                     :sha     "88c9359d34051b539b278fea3146a595eeacdc22"}}
                        :main-opts  ["-m" "cljfmt-runner.fix"]}
            :fmt-check {:extra-deps {com.jameslaverack/cljfmt-runner
                                     {:git/url "https://github.com/JamesLaverack/cljfmt-runner"
-                                     :sha     "6383fbb0bd22a21c0edf5b699425504d9f0a958a"}}
+                                     :sha     "88c9359d34051b539b278fea3146a595eeacdc22"}}
                        :main-opts  ["-m" "cljfmt-runner.check"]}
            :kibit     {:extra-deps {tvaughan/kibit-runner {:mvn/version "1.0.1"}}
                        :main-opts  ["-m" "kibit-runner.cmdline"]}
