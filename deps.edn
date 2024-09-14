@@ -1,19 +1,19 @@
 {:paths   ["resources" "src"]
- :deps    {org.clojure/clojure            {:mvn/version "1.11.1"}
-           org.clojure/data.json          {:mvn/version "2.4.0"}
-           com.webauthn4j/webauthn4j-core {:mvn/version "0.20.1.RELEASE"}
-           nrepl/nrepl                    {:mvn/version "0.9.0"}}
+ :deps    {org.clojure/clojure            {:mvn/version "1.12.0"}
+           org.clojure/data.json          {:mvn/version "2.5.0"}
+           com.webauthn4j/webauthn4j-core {:mvn/version "0.26.0.RELEASE"}
+           nrepl/nrepl                    {:mvn/version "1.3.0"}}
  :aliases {:test      {:extra-paths ["test" "test-resources"]
-                       :extra-deps  {lambdaisland/kaocha {:mvn/version "1.68.1059"}
+                       :extra-deps  {lambdaisland/kaocha {:mvn/version "1.91.1392"}
                                      buddy/buddy         {:mvn/version "2.0.0"}
-                                     ring/ring           {:mvn/version "1.9.5"}
-                                     compojure/compojure {:mvn/version "1.7.0"}}
+                                     ring/ring           {:mvn/version "1.12.2"}
+                                     compojure/compojure {:mvn/version "1.7.1"}}
                        :main-opts   ["-m" "kaocha.runner"]}
            :run-test  {:extra-paths ["test" "test-resources"]
-                       :extra-deps  {lambdaisland/kaocha {:mvn/version "1.68.1059"}
+                       :extra-deps  {lambdaisland/kaocha {:mvn/version "1.91.1392"}
                                      buddy/buddy         {:mvn/version "2.0.0"}
-                                     ring/ring           {:mvn/version "1.9.5"}
-                                     compojure/compojure {:mvn/version "1.7.0"}}
+                                     ring/ring           {:mvn/version "1.12.2"}
+                                     compojure/compojure {:mvn/version "1.7.1"}}
                        :main-opts   ["-m" "cljwebauthn.sample-app-test"]}
            :kondo     {:extra-deps {clj-kondo/clj-kondo {:mvn/version "RELEASE"}}
                        :main-opts  ["-m" "clj-kondo.main" "--lint" "src"]}

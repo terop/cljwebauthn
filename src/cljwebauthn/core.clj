@@ -6,7 +6,7 @@
            (com.webauthn4j.data AuthenticationRequest AuthenticationParameters)
            (com.webauthn4j WebAuthnManager)
            (com.webauthn4j.authenticator Authenticator)
-           (com.webauthn4j.validator.exception BadSignatureException)))
+           (com.webauthn4j.verifier.exception BadSignatureException)))
 
 (def eliptic-curve -7)
 
